@@ -30,4 +30,8 @@ public class OutputView {
         }
         System.out.println("]\n");
     }
+
+    public void printInputAnswerInfo() {
+        System.out.println("\n당첨 번호를 입력해 주세요.");
+    }
 }

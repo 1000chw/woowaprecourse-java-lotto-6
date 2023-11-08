@@ -1,5 +1,6 @@
 package lotto.controller;
 
+import lotto.model.AnswerLotto;
 import lotto.model.Lotto;
 import lotto.view.InputView;
 import lotto.view.OutputView;
@@ -11,12 +12,14 @@ public class LottoController {
     private final InputView inputView;
     private final OutputView outputView;
     private List<Lotto> lottos;
+    private AnswerLotto answerLotto;
     private int lottoEA;
 
     public LottoController() {
         lottos = new ArrayList<>();
         inputView = new InputView();
         outputView = new OutputView();
+        answerLotto = new AnswerLotto();
     }
     public void lottoGamePlay() {
         inputPrice();
@@ -55,7 +58,9 @@ public class LottoController {
     }
 
     private void inputAnswerLotto(){
-
+        outputView.printInputAnswerInfo();
+        List<Integer> answer = inputView.inputAnswer();
+        answerLotto.setAnswer(answer);
     }
 
     private void inputBonusNumber() {
