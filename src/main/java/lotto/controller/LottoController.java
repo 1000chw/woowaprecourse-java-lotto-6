@@ -51,7 +51,7 @@ public class LottoController {
     }
 
     private void printLottos() {
-
+        outputView.printLottosState(lottos);
     }
 
     private void inputAnswerLotto(){
