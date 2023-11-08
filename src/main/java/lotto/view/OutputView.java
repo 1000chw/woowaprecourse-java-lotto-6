@@ -34,4 +34,8 @@ public class OutputView {
     public void printInputAnswerInfo() {
         System.out.println("\n당첨 번호를 입력해 주세요.");
     }
+
+    public void printInputBonusInfo() {
+        System.out.println("\n보너스 번호를 입력해 주세요.");
+    }
 }

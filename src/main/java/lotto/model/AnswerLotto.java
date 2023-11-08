@@ -3,16 +3,11 @@ package lotto.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AnswerLotto {
-    private List<Integer> answer;
+public class AnswerLotto extends Lotto {
     private int bonusNumber;
 
-    public AnswerLotto () {
-        answer = new ArrayList<>();
-    }
-
-    public void setAnswer(List<Integer> answerInput) {
-        answer = answerInput;
+    public AnswerLotto(List<Integer> numbers) {
+        super(numbers);
     }
 
     public void setBonusNumber(int bonus) {

@@ -30,4 +30,13 @@ public class InputView {
             return inputAnswer();
         }
     }
+
+    public int inputBonusNumber() {
+        String bunusInput = camp.nextstep.edu.missionutils.Console.readLine();
+        try {
+            return Integer.parseInt(bunusInput);
+        }catch (IllegalArgumentException e) {
+            return inputBonusNumber();
+        }
+    }
 }

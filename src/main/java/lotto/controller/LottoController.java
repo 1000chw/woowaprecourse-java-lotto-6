@@ -19,7 +19,6 @@ public class LottoController {
         lottos = new ArrayList<>();
         inputView = new InputView();
         outputView = new OutputView();
-        answerLotto = new AnswerLotto();
     }
     public void lottoGamePlay() {
         inputPrice();
@@ -60,11 +59,13 @@ public class LottoController {
     private void inputAnswerLotto(){
         outputView.printInputAnswerInfo();
         List<Integer> answer = inputView.inputAnswer();
-        answerLotto.setAnswer(answer);
+        answerLotto = new AnswerLotto(answer);
     }
 
     private void inputBonusNumber() {
-
+        outputView.printInputBonusInfo();
+        int bonusNumber = inputView.inputBonusNumber();
+        answerLotto.setBonusNumber(bonusNumber);
     }
 
     private void printStatistics() {
