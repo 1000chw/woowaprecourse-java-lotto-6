@@ -5,7 +5,7 @@ public class InputView {
         String price = camp.nextstep.edu.missionutils.Console.readLine();
         try {
             int priceTotal = Integer.parseInt(price);
-            return priceTotal;
+            return priceTotal/1000;
         }catch (IllegalArgumentException e) {
             return inputPrice();
         }

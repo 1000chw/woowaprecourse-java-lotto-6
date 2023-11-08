@@ -11,7 +11,7 @@ public class LottoController {
     private final InputView inputView;
     private final OutputView outputView;
     private List<Lotto> lottos;
-    private int price;
+    private int lottoEA;
 
     public LottoController() {
         lottos = new ArrayList<>();
@@ -20,7 +20,7 @@ public class LottoController {
     }
     public void lottoGamePlay() {
         inputPrice();
-        inputLottoEA();
+        makeLottos();
         printLottos();
         inputAnswerLotto();
         inputBonusNumber();
@@ -29,11 +29,25 @@ public class LottoController {
 
     private void inputPrice() {
         outputView.printPriceInputInform();
-        price = inputView.inputPrice();
+        lottoEA = inputView.inputPrice();
     }
 
-    private void inputLottoEA() {
+    private void makeLottos() {
+        while (lottoEA > 0){
+            try {
+                Lotto lotto = makeLotto();
+                lottos.add(lotto);
+            } catch (IllegalArgumentException e) {
+            }
+        }
+    }
 
+    private Lotto makeLotto() {
+        final int startNum = 1;
+        final int endNum = 45;
+        final int count = 6;
+        List<Integer> numbers = camp.nextstep.edu.missionutils.Randoms.pickUniqueNumbersInRange(startNum, endNum, count);
+        return new Lotto(numbers);
     }
 
     private void printLottos() {
